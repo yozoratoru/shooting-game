@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)) // 右クリックの検出
+        if (Input.GetMouseButtonDown(0)) // 右クリックの検出
         {
             Shoot();
         }
@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
         if (bulletRB != null)
         {
             // float z = bulletRB.position.z + shootForce * bulletSpeed;
-            bulletRB.AddForce(Vector3.back * shootForce, ForceMode.Impulse);
+            bulletRB.AddForce(gunBarrel.forward * shootForce, ForceMode.Impulse);
         }
         else
         {
