@@ -1,28 +1,25 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    // 得点
-    private int score = 0;
-    
-    // 得点を表示するTMPテキスト
-    public TMP_Text scoreText;
+    public Text scoreText; // UIテキスト
+    private int score = 0; // 現在のスコア
 
-    // 物体が落ちてきたときに呼び出されるメソッド
-    public void ObjectDropped(GameObject droppedObject)
+    void OnTriggerEnter(Collider other)
     {
-        // 色を判別する処理など
-        
-        // 得点を増やす処理など
-        
-        // スコアを更新してTMPテキストに反映する
-        UpdateScoreUI();
+        if (other.CompareTag("kn"))
+        {
+            // タグが"kn"のオブジェクトと衝突した場合、スコアを増やす
+            score += 10;
+            Debug.Log(score);
+            UpdateScoreUI();
+        }
     }
 
-    // TMPテキストに得点を表示するメソッド
     void UpdateScoreUI()
     {
+        // UIのテキストを更新
         scoreText.text = "Score: " + score.ToString();
     }
 }
