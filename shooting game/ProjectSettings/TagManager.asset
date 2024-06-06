@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - kn
+  - kiiro
+  - ao
+  - kuro
   layers:
   - Default
   - TransparentFX
