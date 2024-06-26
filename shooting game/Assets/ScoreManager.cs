@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement; // SceneManagerを使用するために必要
 
 public class ScoreManager : MonoBehaviour
 {
-    private int score = 0;
+    private static int score = 0;
     public UIManager uiManager;
 
     public void AddScore(int points)
@@ -39,6 +39,7 @@ public class ScoreManager : MonoBehaviour
     {
         // 最終スコアを保存
         Debug.Log("zzzzzzzzzzz");
+        Debug.Log("score"+score);
         PlayerPrefs.SetInt("FinalScore", score);
         PlayerPrefs.Save();
 
