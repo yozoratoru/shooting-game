@@ -38,11 +38,12 @@ public class ScoreManager : MonoBehaviour
     public void CalculateFinalScore()
     {
         // 最終スコアを保存
+        Debug.Log("zzzzzzzzzzz");
         PlayerPrefs.SetInt("FinalScore", score);
         PlayerPrefs.Save();
 
         // 次のシーンに移動
-        SceneManager.LoadScene("sukoahyouji"); // "NextScene" を実際のシーン名に置き換えてください
+        SceneManager.LoadScene("sukoahyouji"); // "sukoahyouji" を実際のシーン名に置き換えてください
     }
 
     private void UpdateScoreUI()
@@ -50,5 +51,4 @@ public class ScoreManager : MonoBehaviour
         // UIのスコアを更新する処理を追加
         // uiManager.UpdateScore(score);
     }
-
 }
