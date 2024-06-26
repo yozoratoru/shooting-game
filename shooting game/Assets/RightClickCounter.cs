@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class RightClickCounter : MonoBehaviour
 {
     public Text countText;  // カウントを表示するテキストUI
-    private int count = 0;  // カウントを保持する変数
+    private int count = 20;  // カウントを保持する変数
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class RightClickCounter : MonoBehaviour
         // 左クリック（マウスの左ボタン）が押されたかチェック
         if (Input.GetMouseButtonDown(0))
         {
-            count++;  // カウントを1増やす
+            count--;  // カウントを-1増やす
             UpdateCountText();  // カウントを表示に反映
         }
     }

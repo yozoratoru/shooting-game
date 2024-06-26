@@ -1,38 +1,54 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement; // SceneManagerを使用するために必要
 
 public class ScoreManager : MonoBehaviour
 {
-    public Text scoreText; // UIテキスト
-    private int score = 0; // 現在のスコア
+    private int score = 0;
+    public UIManager uiManager;
+
+    public void AddScore(int points)
+    {
+        score += points;
+        Debug.Log(score);
+        UpdateScoreUI();
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ao"))
         {
-            // タグが"kn"のオブジェクトと衝突した場合、スコアを増やす
-            score += 10;
-            Debug.Log(score);
-            UpdateScoreUI();
-        }else if (other.CompareTag("kuro"))
-        {
-            // タグが"kn"のオブジェクトと衝突した場合、スコアを増やす
-            score += 20;
-            Debug.Log(score);
-            UpdateScoreUI();
-        }else if (other.CompareTag("kiiro"))
-        {
-            // タグが"kn"のオブジェクトと衝突した場合、スコアを増やす
-            score += 50;
+            score += 2;
             Debug.Log(score);
             UpdateScoreUI();
         }
-        
+        else if (other.CompareTag("kuro"))
+        {
+            score += 4;
+            Debug.Log(score);
+            UpdateScoreUI();
+        }
+        else if (other.CompareTag("kiiro"))
+        {
+            score += 6;
+            Debug.Log(score);
+            UpdateScoreUI();
+        }
     }
 
-    void UpdateScoreUI()
+    public void CalculateFinalScore()
     {
-        // UIのテキストを更新
-        scoreText.text = "Score: " + score.ToString();
+        // 最終スコアを保存
+        PlayerPrefs.SetInt("FinalScore", score);
+        PlayerPrefs.Save();
+
+        // 次のシーンに移動
+        SceneManager.LoadScene("sukoahyouji"); // "NextScene" を実際のシーン名に置き換えてください
     }
+
+    private void UpdateScoreUI()
+    {
+        // UIのスコアを更新する処理を追加
+        // uiManager.UpdateScore(score);
+    }
+
 }

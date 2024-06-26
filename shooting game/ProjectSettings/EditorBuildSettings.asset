@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/start.unity
+    path: Assets/Scenes/start.unity
     guid: 63d7d35d100a4484282fd8f12bacf66a
   - enabled: 1
     path: Assets/Scenes/score.unity
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/sukoahyouji.unity
+    guid: 8c688eb9e25efdb4f9953fb9d0075c90
   m_configObjects: {}
