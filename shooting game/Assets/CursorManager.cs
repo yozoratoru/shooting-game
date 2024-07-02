@@ -5,6 +5,7 @@ public class CursorManager : MonoBehaviour
     void Start()
     {
         // ゲーム開始時にカーソルを中央にロックし、非表示にする
+        Debug.Log("aaaaaaaaaaaaaaaaa");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
